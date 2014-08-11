@@ -1,9 +1,11 @@
 require 'sinatra'
-require 'sinatra/reloader'
-
+require 'sinatra/reloader' if development?
+require 'ftools'
 require 'dm-core'
 require 'dm-validations'
 require 'dm-timestamps'
+
+
 
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/mydatabase.sqlite3")
 
